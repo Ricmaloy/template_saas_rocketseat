@@ -1,11 +1,13 @@
-import "server-only";
+import 'server-only'
 
-import Stripe from "stripe";
+import Stripe from 'stripe'
 
-export async function handleStripePayment(event: Stripe.CheckoutSessionCompletedEvent) {
-  if(event.data.object.payment_status === "paid") {
-    console.log("Pagamento realizado com sucesso");
+export async function handleStripePayment(
+  event: Stripe.CheckoutSessionCompletedEvent,
+) {
+  if (event.data.object.payment_status === 'paid') {
+    console.log('Pagamento realizado com sucesso')
   } else {
-    console.log("Pagamento falhou");
+    console.log('Pagamento falhou')
   }
 }
