@@ -1,6 +1,7 @@
 import { redirect } from "next/navigation";
 import { handleAuth } from "@/app/actions/handle-auth";
 import { auth } from "@/app/lib/auth";
+import Link from "next/link";
 
 export default async function Dashboard() {
     const session = await auth();
@@ -22,6 +23,7 @@ export default async function Dashboard() {
             </form>
         )}
 
+        <Link className="border py-2 px-4 cursor-pointer" href={`/pagamentos`}>Pagamentos</Link>
     </div>
     );
   }
